@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="goldcostumer" class="com.springcore.GoldCustomer" scope="prototype" init-method="start" destroy-method="stop">
+		<!-- <constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Alex"></constructor-arg> -->
+		<property name="id" value="1"></property>
+		<property name="name" value="Alex"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+	<bean id="address" class="com.springcore.Address">
+		<!-- <constructor-arg value="Bangalore"></constructor-arg>
+		<constructor-arg value="Karnataka"></constructor-arg> -->
+		<property name="city" value="Bangalore"></property>
+		<property name="state" value="Karnataka"></property>
+	</bean>
+ 
+</beans>
